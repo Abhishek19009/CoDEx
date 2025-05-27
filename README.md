@@ -1,6 +1,6 @@
 <div align="center">
 <h2>
-**CoDEx**: Combining Domain Expertise for Spatial Generalization in Satellite Image Analysis 
+<b>CoDEx</b>: Combining Domain Expertise for Spatial Generalization in Satellite Image Analysis 
 
 <a href="https://imagine.enpc.fr/~abhishek.kuriyal/">Abhishek Kuriyal</a>&emsp;
 <a href="https://imagine.enpc.fr/~elliot.vincent/">Elliot Vincent</a>&emsp;
