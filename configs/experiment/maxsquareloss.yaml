@@ -1,0 +1,22 @@
+# @package _global_
+
+datamodule:
+  _target_: data.datamodule.ImageDataModule_train_test
+
+model:
+  test_reg:
+    _target_: models.losses.Losses
+    mix: {
+      maximum_square_loss : 0.3,
+    }
+
+trainer:
+  max_epochs: 100
+  check_val_every_n_epoch: 10
+  accumulate_grad_batches: 4
+
+dataset:
+  global_batch_size: 2
+
+use_baseline_pretrained: False
+experiment_name: ${dataset.name}_${model.name}_maxsquareloss

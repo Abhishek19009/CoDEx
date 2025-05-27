@@ -1,0 +1,33 @@
+# @package _global_
+
+dataset:
+  global_batch_size: 8
+  all_dataset:
+    train_length: 4
+  transforms:
+    gpu:
+      contrastive:
+        trainvaltest: True
+        contrastive_batch_size: 4
+
+model:
+  name: ContrastiveSegmentation
+  network:
+    instance:
+      _target_: models.networks.contraseg.ContraSegNet
+      use_memory_bank: False
+      num_vectors_in_memory_bank: None
+      vector_dim_in_memory_bank: None
+      where_contrastive: encoder
+      random_select_date: 4
+
+defaults:
+  - /model/loss/contraseg
+
+trainer:
+  max_epochs: 200
+  check_val_every_n_epoch: 10
+
+pretrained_ckpt_filename: ${root_dir}/checkpoints/best_miou_ckpt_in.ckpt
+use_baseline_pretrained: True
+experiment_name: ${dataset.name}_${model.name}_ContraSeg

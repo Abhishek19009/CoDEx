@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - override /model: coral
+
+coral_penalty: ${model.coral_penalty}
+datamodule:
+  return_features: True

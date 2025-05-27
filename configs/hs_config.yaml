@@ -1,0 +1,86 @@
+defaults:
+  - computer: gpu
+  - dataset: dynamicearthnet
+  - model: baseline
+  - _self_
+  - experiment: null
+
+model:
+  val_metrics:
+    _target_: metrics.scd_metrics.SCDMetric
+    num_classes: ${dataset.num_classes}
+    class_names: ${dataset.class_names}
+    ignore_index: ${dataset.ignore_index}
+
+  test_metrics:
+    _target_: metrics.scd_metrics.SCDMetric
+    num_classes: ${dataset.num_classes}
+    class_names: ${dataset.class_names}
+    ignore_index: ${dataset.ignore_index}
+
+datamodule:
+  _target_: data.datamodule.ImageDataModule
+  all_dataset: ${dataset.all_dataset}
+  train_dataset: ${dataset.train_dataset}
+  train_dataset_infer: ${dataset.train_dataset_infer}
+  val_dataset_domain_shift: ${dataset.val_dataset_domain_shift}
+  val_dataset_no_domain_shift: ${dataset.val_dataset_no_domain_shift}
+  test_dataset_domain_shift: ${dataset.test_dataset_domain_shift}
+  test_dataset_no_domain_shift: ${dataset.test_dataset_no_domain_shift}
+  global_batch_size: ${dataset.global_batch_size}
+  num_workers: ${computer.num_workers}
+  num_nodes: ${computer.num_nodes}
+  num_devices: ${computer.devices}
+  transforms: ${dataset.transforms}
+
+trainer:
+  _target_: pytorch_lightning.Trainer
+  devices: ${computer.devices}
+  accelerator: ${computer.accelerator}
+  strategy: ${computer.strategy}
+  num_nodes: ${computer.num_nodes}
+  precision: ${computer.precision}
+  max_epochs: 200
+  check_val_every_n_epoch: 10
+
+
+logger:
+  _target_: pytorch_lightning.loggers.WandbLogger
+  save_dir: ${root_dir}
+  name: ${experiment_name}
+  project: MultiutaeMultihead
+  log_model: False
+  offline: False
+  entity: imaginelab
+
+checkpoints:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  dirpath: ${root_dir}/checkpoints/${experiment_name}
+  filename: 'best_miou_ckpt'
+  monitor: val/miou
+  save_last: True
+  save_top_k: 1
+  every_n_epochs: 1
+  mode: max
+  enable_version_counter: False
+
+progress_bar:
+  _target_: pytorch_lightning.callbacks.TQDMProgressBar
+  refresh_rate: ${computer.progress_bar_refresh_rate}
+
+data_dir: ${root_dir}/datasets
+root_dir:  ${hydra:runtime.cwd}
+experiment_name: ${dataset.name}_${model.name}
+mode: train # change that to eval to do the testing
+vis_type: val  # change to 'test_dataset_domain_shift' for test split
+use_baseline_pretrained: True
+num_classes: ${dataset.num_classes}
+pretrained_ckpt_filename: ${root_dir}/checkpoints/best_miou_ckpt_in.ckpt
+hydra:
+  run:
+    dir: outputs/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}/${experiment_name}
+  job:
+    chdir: true
+
+
+

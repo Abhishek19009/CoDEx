@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  4%|█████▎                                                                                                                              | 35/880 [00:44<18:05,  1.28s/it]
+Traceback (most recent call last):
+  File "/home/abhishek/release/MultiHead-MultiUTAE/headselector/./main/train_pmoh_de.py", line 329, in <module>
+    train()
+  File "/home/abhishek/release/MultiHead-MultiUTAE/headselector/./main/train_pmoh_de.py", line 214, in train
+    l_me = criterion(logits, P)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/abhishek/miniconda3/envs/sitsscd/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1494, in _call_impl
+    def _call_impl(self, *args, **kwargs):
+KeyboardInterrupt

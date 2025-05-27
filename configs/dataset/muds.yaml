@@ -1,0 +1,57 @@
+name: Muds
+global_batch_size: 8
+num_areas: 40
+num_channels: 3
+num_classes: 2
+ignore_index: 2
+class_names: ["not building", "building"]
+
+
+all_dataset:
+  _partial_: true
+  _target_: data.data.DynamicEarthNet
+  path: ${data_dir}/DynamicEarthNet/
+  split: all
+  train_length: 6
+
+
+train_dataset:
+  _partial_: true
+  _target_: data.data.Muds
+  path: ${data_dir}/Muds/
+  split: train
+  train_length: 6
+
+train_dataset_infer:
+  _partial_: true
+  _target_: data.data.Muds
+  path: ${data_dir}/Muds/
+  split: train
+  domain_shift: true
+
+val_dataset_domain_shift:
+  _partial_: true
+  _target_: data.data.Muds
+  path: ${data_dir}/Muds/
+  split: val
+  domain_shift: true
+
+val_dataset_no_domain_shift:
+  _partial_: true
+  _target_: data.data.Muds
+  path: ${data_dir}/Muds/
+  split: val
+  domain_shift: false
+
+test_dataset_domain_shift:
+  _partial_: true
+  _target_: data.data.Muds
+  path: ${data_dir}/Muds/
+  split: test
+  domain_shift: true
+
+test_dataset_no_domain_shift:
+  _partial_: true
+  _target_: data.data.Muds
+  path: ${data_dir}/Muds/
+  split: test

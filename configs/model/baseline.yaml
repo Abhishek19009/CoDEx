@@ -1,0 +1,8 @@
+defaults:
+  - network: multiutae
+  # - loss: focal
+  - mhmetrics: dynamicearthnet
+  - optimizer: adamw
+  - lr_scheduler: warmup
+
+name: multiUTAE

@@ -1,0 +1,18 @@
+# @package _global_
+
+model:
+  name: MultiUTAE
+  network:
+    instance:
+      _target_: models.networks.multiutae.MultiUTAE
+      in_features: 64
+
+trainer:
+  devices: 2
+  max_epochs: 200
+  check_val_every_n_epoch: 10
+  strategy: auto
+
+use_baseline_pretrained: False
+
+experiment_name: ${dataset.name}_${model.name}_Baseline

@@ -1,0 +1,273 @@
+{
+    "os": "Linux-5.15.0-119-generic-x86_64-with-glibc2.31",
+    "python": "3.11.9",
+    "heartbeatAt": "2025-03-01T01:19:57.539231",
+    "startedAt": "2025-03-01T01:19:56.787517",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--load_save",
+        "1",
+        "--num_epochs",
+        "120",
+        "--device",
+        "cuda:1",
+        "--learning_rate",
+        "1e-3",
+        "--criterion",
+        "me",
+        "--feat_type",
+        "encoder+decoder",
+        "--kernel_size",
+        "1",
+        "--label_type",
+        "acc",
+        "--num_convs",
+        "3",
+        "--out_first",
+        "32"
+    ],
+    "state": "running",
+    "program": "/home/abhishek/release/MultiHead-MultiUTAE/headselector/./main/train_pmoh_de.py",
+    "codePathLocal": "main/train_pmoh_de.py",
+    "codePath": "headselector/main/train_pmoh_de.py",
+    "git": {
+        "remote": "https://github.com/Abhishek19009/MultiHead-MultiUTAE",
+        "commit": "951a7ee2aa7da8f32923a9ff2d227c290ccdab7a"
+    },
+    "email": "abhishek.kuriyal@enpc.fr",
+    "root": "/home/abhishek/release/MultiHead-MultiUTAE",
+    "host": "hecate",
+    "username": "abhishek",
+    "executable": "/home/abhishek/miniconda3/envs/sitsscd/bin/python",
+    "cpu_count": 20,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 2406.7445249999996,
+        "min": 1000.0,
+        "max": 3200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3011.749,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 999.999,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 3170.793,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2400.0,
+            "min": 1000.0,
+            "max": 3200.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1868.091381072998,
+            "used": 1697.2139739990234
+        }
+    },
+    "gpu": "NVIDIA RTX A6000",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA RTX A6000",
+            "memory_total": 51527024640
+        },
+        {
+            "name": "NVIDIA RTX A6000",
+            "memory_total": 51527024640
+        }
+    ],
+    "memory": {
+        "total": 62.53626251220703
+    }
+}

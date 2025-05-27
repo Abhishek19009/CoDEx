@@ -1,0 +1,4 @@
+num_classes: 6
+class_names: ["impervi", "agricult", "forest", "wetlands", "soil", "water"]
+num_areas: 55
+ignore_index: 6

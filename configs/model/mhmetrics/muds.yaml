@@ -1,0 +1,4 @@
+num_classes: 2
+class_names: ["not building", "building"]
+num_areas: 40
+ignore_index: 2

@@ -1,0 +1,88 @@
+name: DynamicEarthNet
+global_batch_size: 8
+num_areas: 55
+num_channels: 4
+num_classes: 6
+ignore_index: 6
+class_names: ["impervi", "agricult", "forest", "wetlands", "soil", "water"]
+wavelengths: [0.665, 0.56, 0.49, 0.865]
+
+all_dataset:
+  _partial_: true
+  _target_: data.data.DynamicEarthNet
+  path: ${data_dir}/DynamicEarthNet/
+  split: all
+  train_length: 4
+  date_aug_range: 0
+
+train_dataset:
+  _partial_: true
+  _target_: data.data.DynamicEarthNet
+  path: ${data_dir}/DynamicEarthNet/
+  split: train
+  train_length: 12
+  date_aug_range: 0
+
+train_dataset_infer:
+  _partial_: true
+  _target_: data.data.DynamicEarthNet
+  path: ${data_dir}/DynamicEarthNet/
+  split: train
+  domain_shift: true
+
+val_dataset_domain_shift:
+  _partial_: true
+  _target_: data.data.DynamicEarthNet
+  path: ${data_dir}/DynamicEarthNet/
+  split: val
+  domain_shift: true
+
+val_dataset_no_domain_shift:
+  _partial_: true
+  _target_: data.data.DynamicEarthNet
+  path: ${data_dir}/DynamicEarthNet/
+  split: val
+  domain_shift: false
+
+test_dataset_domain_shift:
+  _partial_: true
+  _target_: data.data.DynamicEarthNet
+  path: ${data_dir}/DynamicEarthNet/
+  split: test
+  domain_shift: true
+
+test_dataset_no_domain_shift:
+  _partial_: true
+  _target_: data.data.DynamicEarthNet
+  path: ${data_dir}/DynamicEarthNet/
+  split: test
+  domain_shift: false
+
+transforms:
+  cpu:
+    color_jitter:
+      enable: false
+      brightness: 0.5
+      contrast: 0.5
+      saturation: 0.5
+      hue: 0.5
+      infra: True
+      prob: 1.0
+  gpu:
+    style-augmentation:
+      enable: false
+      alpha: 0.5
+    contrastive:
+      trainvaltest: False
+      contrastive_batch_size: 4
+    classmix:
+      enable: false
+      mode: "max_size_cycle"
+      alpha: 0.5
+      init_length: 24
+      train_length: 12
+      do_normalize: false
+      random_n_samples: true
+    i2i:
+      enable: false
+      gen_type: 'cyclegan_unet'

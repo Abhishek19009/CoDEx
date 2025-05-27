@@ -1,0 +1,46 @@
+# @package _global_
+
+model:
+  name: MultiHead_MultiUTAE_d3g
+  network:
+    instance:
+      _target_: models.networks.multiutae_multihead_d3g.MultiUTAE
+      input_dim: ${dataset.num_channels}
+      num_classes: ${dataset.num_classes}
+      return_all_heads: ${return_all_heads}
+      num_domains: 55
+      in_features: 64
+      seq_length: 12
+      str_conv_k: 4
+      str_conv_s: 2
+      str_conv_p: 1
+      agg_mode: "att_group"
+      encoder_norm: "group"
+      n_head: 16
+      d_k: 4
+      pad_value: 0
+      padding_mode: "reflect"
+      T: 1000
+      offset: 10
+      buffer_size: 20
+
+defaults:
+  - /model/loss/focald3g
+
+dataset:
+  train_dataset: 
+    train_length: 12
+  global_batch_size: 8
+
+# Transforms for DynamicEarthNet
+datamodule:
+  _target_: data.datamodule.ImageDataModule
+  transforms: ${dataset.transforms}
+
+trainer:
+  max_epochs: 100
+  check_val_every_n_epoch: 10
+  strategy: auto
+
+use_baseline_pretrained: False
+experiment_name: ${dataset.name}_${model.name}

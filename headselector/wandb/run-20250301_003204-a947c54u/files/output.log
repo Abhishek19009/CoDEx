@@ -1,0 +1,15 @@
+
+  0%|                                                                                                                                             | 0/880 [00:05<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/abhishek/release/MultiHead-MultiUTAE/headselector/./main/train_pmoh_de.py", line 327, in <module>
+    train()
+  File "/home/abhishek/release/MultiHead-MultiUTAE/headselector/./main/train_pmoh_de.py", line 197, in train
+    outputs = model(batch)
+              ^^^^^^^^^^^^
+  File "/home/abhishek/miniconda3/envs/sitsscd/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/abhishek/release/MultiHead-MultiUTAE/models/networks/head_selector.py", line 291, in forward
+    domain_feats = out['domain_feats']
+                   ~~~^^^^^^^^^^^^^^^^
+KeyError: 'domain_feats'

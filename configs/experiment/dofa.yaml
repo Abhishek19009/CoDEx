@@ -1,0 +1,29 @@
+# @package _global_
+
+# This is the DOFA configuration file.
+# The pretrained model can be downloaded here: https://huggingface.co/XShadow/DOFA/resolve/main/DOFA_ViT_base_e100.pth?download=true
+# it must be put in the repo root folder
+
+defaults:
+  - override /model/network: dofa
+  - override /model/loss: focal
+  - override /model/optimizer: adamw
+  - override /model/lr_scheduler: warmup
+
+dataset:
+  train_dataset:
+    train_length: 1
+  global_batch_size: 64
+trainer:
+  max_epochs: 800 #to have the same number of updates as the baseline
+  check_val_every_n_epoch: 40
+
+model:
+  name: DOFA
+  network:
+    instance:
+      unfreeze_last_x_blocks: 0 # Dofa has 12 blocks. This will keep the whole model frozen
+      lora_rank: 0 # 0 means no lora
+
+use_baseline_pretrained: False
+experiment_name: ${dataset.name}_${model.name}_Dofa

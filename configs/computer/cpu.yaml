@@ -1,0 +1,4 @@
+accelerator: cpu
+
+defaults:
+  - gpu

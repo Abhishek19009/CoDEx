@@ -1,0 +1,23 @@
+# @package _global_
+defaults:
+  - override /model/network: dofa_w_attention
+  - override /model/loss: focal
+  - override /model/optimizer: adamw
+  - override /model/lr_scheduler: warmup
+
+dataset:
+  train_dataset:
+    train_length: 12
+  global_batch_size: 8
+trainer.max_epochs: 100 #to have the same number of updates as the baseline
+
+model:
+  name: DOFA_WITH_ATTENTION
+  network:
+    instance:
+      unfreeze_last_x_blocks: 0 # Dofa has 12 blocks. This will keep the whole model frozen
+      lora_rank: 0 # 0 means no lora
+
+
+use_baseline_pretrained: False
+experiment_name: ${dataset.name}_${model.name}_Dofa_w_Att

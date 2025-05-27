@@ -1,0 +1,143 @@
+wandb_version: 1
+
+batch_size:
+  desc: null
+  value: 4
+learning_rate:
+  desc: null
+  value: 0.001
+num_epochs:
+  desc: null
+  value: 120
+num_workers:
+  desc: null
+  value: 8
+device:
+  desc: null
+  value: cuda:1
+sgd_momentum:
+  desc: null
+  value: 0.9
+num_channels:
+  desc: null
+  value: 4
+num_classes:
+  desc: null
+  value: 6
+num_domains:
+  desc: null
+  value: 55
+feat_type:
+  desc: null
+  value: encoder+decoder
+label_type:
+  desc: null
+  value: acc
+hs_lambda:
+  desc: null
+  value: 0.9
+kernel_size:
+  desc: null
+  value: 1
+num_convs:
+  desc: null
+  value: 3
+out_first:
+  desc: null
+  value: 32
+input_dim:
+  desc: null
+  value: 4
+in_features:
+  desc: null
+  value: 64
+seq_length:
+  desc: null
+  value: 12
+str_conv_k:
+  desc: null
+  value: 4
+str_conv_s:
+  desc: null
+  value: 2
+str_conv_p:
+  desc: null
+  value: 1
+agg_mode:
+  desc: null
+  value: att_group
+encoder_norm:
+  desc: null
+  value: group
+n_head:
+  desc: null
+  value: 16
+d_k:
+  desc: null
+  value: 4
+pad_value:
+  desc: null
+  value: 0
+padding_mode:
+  desc: null
+  value: reflect
+T:
+  desc: null
+  value: 1000
+offset:
+  desc: null
+  value: 10
+buffer_size:
+  desc: null
+  value: 20
+pretrained_checkpoint_path:
+  desc: null
+  value: ../checkpoints/DynamicEarthNet_MultiHead_MultiUTAE_Learned/best_miou_ckpt_in.ckpt
+temp:
+  desc: null
+  value: 2.0
+criterion:
+  desc: null
+  value: me
+ignore_index:
+  desc: null
+  value: 6
+data_dir:
+  desc: null
+  value: ../datasets/DynamicEarthNet_feats
+checkpoint_path:
+  desc: null
+  value: ./checkpoints
+head:
+  desc: null
+  value: 0
+load_save:
+  desc: null
+  value: false
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.9
+    cli_version: 0.17.1
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1740789163
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.11.9
+      5: 0.17.1
+      8:
+      - 5
+      13: linux-x86_64

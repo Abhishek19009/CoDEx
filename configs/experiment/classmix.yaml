@@ -1,0 +1,23 @@
+# @package _global_
+
+datamodule:
+  train_dataset:
+    train_length: 24
+
+  transforms:
+    gpu:
+      classmix:
+        enable: true
+        mode: "max_size_cycle"
+        alpha: 0.5
+        init_length: 24
+        train_length: 12
+        do_normalize: false
+        random_n_samples: true
+
+trainer:
+  max_epochs: 100
+  check_val_every_n_epoch: 10
+
+use_baseline_pretrained: False
+experiment_name: ${dataset.name}_${model.name}_Classmix
