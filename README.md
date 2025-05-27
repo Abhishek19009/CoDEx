@@ -1,6 +1,6 @@
 <div align="center">
 <h2>
-Combining Domain Expertise for Spatial Generalization in Satellite Image Analysis 
+**CoDEx**: Combining Domain Expertise for Spatial Generalization in Satellite Image Analysis 
 
 <a href="https://imagine.enpc.fr/~abhishek.kuriyal/">Abhishek Kuriyal</a>&emsp;
 <a href="https://imagine.enpc.fr/~elliot.vincent/">Elliot Vincent</a>&emsp;
@@ -110,11 +110,11 @@ python train_head_selector.py dataset=dynamicearthnet experiment=multihead_selec
 ## Citing
 
 ```bibtex
-@article{temp,
-    title = {MultiHead MultiUTAE},
-    author = {},
-    journal = {arXiv},
-    year = {2025},
+@article{kuriyal2025codex,
+  title={CoDEx: Combining Domain Expertise for Spatial Generalization in Satellite Image Analysis},
+  author={Kuriyal, Abhishek and Vincent, Elliot and Aubry, Mathieu and Landrieu, Loic},
+  journal={arXiv preprint arXiv:2504.19737},
+  year={2025}
 }
 ```
 
