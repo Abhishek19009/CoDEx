@@ -33,8 +33,7 @@ git clone https://github.com/Abhishek19009/MultiHead-MultiUTAE
 ```
 
 ### 2. Dataset Download
-Similar to [1], this works benchmarks on processed versions of DynamicEarthNet [2] and MUDS [3]. 
-Datasets can be downloaded using code below or following the links:
+Datasets DynamicEarthNet [2] and MUDS [3] can be downloaded using code below or following the links:
 [DynamicEarthNet](https://drive.google.com/file/d/1cMP57SPQWYKMy8X60iK217C28RFBkd2z/view?usp=drive_link) (7.09G) and
 [MUDS](https://drive.google.com/file/d/1RySuzHgQDSgHSw2cbriceY5gMqTsCs8I/view?usp=drive_link) (245M).
 
