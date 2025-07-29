@@ -3,7 +3,7 @@
 <b>CoDEx</b>: Combining Domain Expertise for Spatial Generalization in Satellite Image Analysis 
 
 <a href="https://imagine.enpc.fr/~abhishek.kuriyal/">Abhishek Kuriyal</a>&emsp;
-<a href="https://imagine.enpc.fr/~elliot.vincent/">Elliot Vincent</a>&emsp;
+<a href="https://elliotvincent.github.io/">Elliot Vincent</a>&emsp;
 <a href="https://imagine.enpc.fr/~aubrym/">Mathieu Aubry</a>&emsp;
 <a href="https://imagine.enpc.fr/~loic.landrieu/">Loic Landrieu</a>
 
@@ -23,13 +23,13 @@ Checkout the official PyTorch implementation available here [**Satellite Image T
 #### Recursive
 
 ```
-git clone git@github.com:Abhishek19009/MultiHead-MultiUTAE.git
+git clone git@github.com:Abhishek19009/CoDEx.git
 ```
 
 #### HTTPS
 
 ```
-git clone https://github.com/Abhishek19009/MultiHead-MultiUTAE
+git clone https://github.com/Abhishek19009/CoDEx
 ```
 
 ### 2. Dataset Download
@@ -39,7 +39,7 @@ Datasets DynamicEarthNet [2] and MUDS [3] can be downloaded using code below or 
 
 
 ```
-cd MultiHead-MultiUTAE
+cd CoDEx
 mkdir datasets
 cd datasets
 gdown 1RySuzHgQDSgHSw2cbriceY5gMqTsCs8I
@@ -66,12 +66,12 @@ This step involves training the multihead architecture for different datasets.
 
 For DynamicEarthNet:
 ```
-python train_multiutae.py dataset=dynamicearthnet experiment=multihead_multiutae_de
+python train_multiutae.py dataset=dynamicearthnet experiment=codex_de
 ```
 
 For MUDS:
 ```
-python train_multiutae.py dataset=muds experiment=multihead_multiutae_muds
+python train_multiutae.py dataset=muds experiment=codex_muds
 ```
 
 ### Step 2: Training Head Selector (Domain Generalization Network)
@@ -109,10 +109,11 @@ python train_head_selector.py dataset=dynamicearthnet experiment=multihead_selec
 ## Citing
 
 ```bibtex
-@article{kuriyal2025codex,
+@inproceedings{kuriyal2025codex,
   title={CoDEx: Combining Domain Expertise for Spatial Generalization in Satellite Image Analysis},
   author={Kuriyal, Abhishek and Vincent, Elliot and Aubry, Mathieu and Landrieu, Loic},
-  journal={arXiv preprint arXiv:2504.19737},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={2194--2203},
   year={2025}
 }
 ```
