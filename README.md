@@ -12,7 +12,7 @@
 </h2>
 </div>
 
-<i>This work is an extension of satellite image time series semantic change detection (SITS-SCD) task [1]. </i>
+This work was presented at **EarthVision CVPR Workshop 2025**. It is an extension of satellite image time series semantic change detection (SITS-SCD) paper [1].
 
 Checkout the official PyTorch implementation available here [**Satellite Image Time Series Semantic Change Detection: Novel Architecture and Analysis of Domain Shift**](https://github.com/ElliotVincent/SitsSCD).
 
